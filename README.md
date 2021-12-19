@@ -1,2 +1,2 @@
 # Sobel
-Sobel imgae processing algorithm in C++
+Sobel image processing algorithm in C++
