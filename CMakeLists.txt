@@ -4,4 +4,4 @@ project(Sobel)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(Sobel
-        read_image_header.cpp)
+        process_image.cpp)
