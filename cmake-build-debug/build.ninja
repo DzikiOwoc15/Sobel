@@ -49,8 +49,8 @@ cmake_ninja_workdir = C$:/Users/lukas/Desktop/DevTools/Sobel/cmake-build-debug/
 
 build cmake_object_order_depends_target_Sobel: phony || CMakeFiles/Sobel.dir
 
-build CMakeFiles/Sobel.dir/read_image_header.cpp.obj: CXX_COMPILER__Sobel_Debug C$:/Users/lukas/Desktop/DevTools/Sobel/read_image_header.cpp || cmake_object_order_depends_target_Sobel
-  DEP_FILE = CMakeFiles\Sobel.dir\read_image_header.cpp.obj.d
+build CMakeFiles/Sobel.dir/process_image.cpp.obj: CXX_COMPILER__Sobel_Debug C$:/Users/lukas/Desktop/DevTools/Sobel/process_image.cpp || cmake_object_order_depends_target_Sobel
+  DEP_FILE = CMakeFiles\Sobel.dir\process_image.cpp.obj.d
   FLAGS = -g -std=gnu++14
   OBJECT_DIR = CMakeFiles\Sobel.dir
   OBJECT_FILE_DIR = CMakeFiles\Sobel.dir
@@ -63,7 +63,7 @@ build CMakeFiles/Sobel.dir/read_image_header.cpp.obj: CXX_COMPILER__Sobel_Debug 
 #############################################
 # Link the executable Sobel.exe
 
-build Sobel.exe: CXX_EXECUTABLE_LINKER__Sobel_Debug CMakeFiles/Sobel.dir/read_image_header.cpp.obj
+build Sobel.exe: CXX_EXECUTABLE_LINKER__Sobel_Debug CMakeFiles/Sobel.dir/process_image.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Sobel.dir

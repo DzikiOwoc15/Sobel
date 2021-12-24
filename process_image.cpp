@@ -125,7 +125,7 @@ void sobelImageProcessing(const char* filename, const char* newFilename){
 }
 
 int main(){
-    sobelImageProcessing(R"(C:\Users\lukas\Desktop\DevTools\Sobel\RAY.BMP)", "test");
+    sobelImageProcessing(R"(C:\Users\lukas\Desktop\DevTools\Sobel\sampleImages\RAY.BMP)", "test");
 }
 
 

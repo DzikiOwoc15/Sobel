@@ -101,7 +101,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "read_image_header.cpp",
+			"path" : "process_image.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
