@@ -5,6 +5,49 @@
 
 using namespace std;
 
+const int filters[8][3][3] = {
+        {
+                {-1, 0, 1},
+                {-2, 0, 2},
+                {-1, 0, 1}
+        },
+        {
+                {0, 1, 2},
+                {-1, 0, 1},
+                {-2, -1, 0}
+        },
+        {
+                {1, 2, 1},
+                {0,0,0},
+                {-1,-2,-1}
+        },
+        {
+                {2, 1, 0},
+                {1, 0, -1},
+                {0, -1, -2}
+        },
+        {
+            {1, 0, -1},
+            {2, 0, -2},
+            {1, 0, -1}
+        },
+        {
+                {0, -1, -2},
+                {1, 0, -1},
+                {2, 1, 0}
+        },
+        {
+                {-1, -2, -1},
+                {0,0,0},
+                {1,2,1}
+        },
+        {
+                {-2, -1, 0},
+                {-1, 0, 1},
+                {0, 1, 2}
+        }
+};
+
 
 
 void readImageBitmapHeader(const char info[54]){
@@ -37,6 +80,11 @@ void readImageBitmapHeader(const char info[54]){
     cout << endl;
 }
 
+vector< vector< vector<int> > > applyFilter(int filterId, vector< vector< vector<int> > > data){
+    return data;
+}
+
+
 void sobelImageProcessing(const char* filename, const char* newFilename){
     cout << "Nazwa pliku: " << filename << endl;
     FILE* f = fopen(filename, "rb");
@@ -48,16 +96,15 @@ void sobelImageProcessing(const char* filename, const char* newFilename){
     int height = *(int*)&info[22];
     int width = *(int*)&info[18];
 
-    int calc = bitmapSize/height;
-    int cal2 = calc/3;
-    int bajtyZerowe = (cal2 - width) * 3;
+    int bajtyZerowe = ((((bitmapSize/height)/3)) - width) * 3;
     cout << "Bajty zerowe: " << bajtyZerowe << endl;
 
-    int row_padded = (width*3 + 3) & (~3);
+ ;   int row_padded = (width*3 + 3) & (~3);
     auto* data = new unsigned char[width];
 
     vector< vector< vector<int> > > pixels(height, vector< vector<int> >(width , vector<int>(3)));
 
+    //get every pixel data
     for(int i = 0; i < height; i++){
         fread(data, sizeof(unsigned char), row_padded, f);
         for(int j = 0; j < width; j++){
@@ -67,7 +114,14 @@ void sobelImageProcessing(const char* filename, const char* newFilename){
         }
     }
 
-    //fclose(f);
+    //apply every filter
+    for (int i = 0; i < 8; i++){
+        vector<vector<vector<int>>> postFilterData =  applyFilter(i, pixels);
+    }
+
+    //Calculate average R G B values based on all filters
+
+    //Store the  new image in a new file
 }
 
 int main(){
